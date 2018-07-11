@@ -1,0 +1,25 @@
+{
+  "name": "piano-tuner-locater",
+  "version": "1.0.0",
+  "description": "A REST API built using Express and Mongoose with MongoDB with a frontend website that finds piano tuners in a certain area from a predetermined database",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanmor/piano-tuner-locater.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanmor/piano-tuner-locater/issues"
+  },
+  "homepage": "https://github.com/jordanmor/piano-tuner-locater#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  }
+}
