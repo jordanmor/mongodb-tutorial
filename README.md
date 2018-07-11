@@ -1,2 +1,2 @@
-# rest-api-plumbers
-Build a REST API using Express and Mongoose with MongoDB that finds plumbers in a certain area from a  predetermined database
+# rest-api-piano-tuners
+A REST API built using Express and Mongoose with MongoDB with a frontend website that finds piano tuners in a certain area from a predetermined database
