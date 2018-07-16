@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const Tuner = require('../models/tuner');
 
-router.get('/tuners', (req, res) => {
-    res.send({type: 'GET'});
+router.get('/tuners', (req, res, next) => {
+    Tuner.findOne({name: req.query.name})
+         .then(tuner => res.send(tuner))
+         .catch(next);
 });
 
 router.post('/tuners', (req, res, next) => {
