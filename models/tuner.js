@@ -1,6 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// create geolocation Schema
+const GeoSchema = new Schema({
+    type: {
+        type: String,
+        default: "Point"
+    },
+    coordinates: {
+        type: [Number],
+        index: "2dsphere"
+    }
+});
+
 const TunerSchema = new Schema({
     name: {
         type: String,
@@ -20,7 +32,8 @@ const TunerSchema = new Schema({
     available: {
         type: Boolean,
         default: false
-    }
+    },
+    geometry: GeoSchema
 });
 
 const Tuner = mongoose.model('tuner', TunerSchema);
