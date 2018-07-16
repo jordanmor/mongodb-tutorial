@@ -6,9 +6,7 @@ const TunerSchema = new Schema({
         type: String,
         required: [true, 'Name field is required']
     },
-    businessName: {
-        type: String
-    },
+    businessName: String,
     contactInfo: {
         tel: Number,
         email: String,
