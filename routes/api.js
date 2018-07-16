@@ -12,8 +12,11 @@ router.post('/tuners', (req, res, next) => {
         .catch(next);
 });
 
-router.put('/tuners/:id', (req, res) => {
-    res.send({type: 'PUT'});
+router.put('/tuners/:id', (req, res, next) => {
+    Tuner.findByIdAndUpdate({_id: req.params.id}, req.body)
+    .then(() => Tuner.findOne({_id: req.params.id}))
+    .then(tuner => res.send(tuner))
+    .catch(next);
 });
 
 router.delete('/tuners/:id', (req, res) => {
