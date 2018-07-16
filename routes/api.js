@@ -6,8 +6,10 @@ router.get('/tuners', (req, res) => {
     res.send({type: 'GET'});
 });
 
-router.post('/tuners', (req, res) => {
-    res.send({type: 'POST'});
+router.post('/tuners', (req, res, next) => {
+    Tuner.create(req.body)
+        .then(tuner => res.send(tuner))
+        .catch(next);
 });
 
 router.put('/tuners/:id', (req, res) => {
