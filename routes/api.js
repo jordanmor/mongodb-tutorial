@@ -19,8 +19,10 @@ router.put('/tuners/:id', (req, res, next) => {
     .catch(next);
 });
 
-router.delete('/tuners/:id', (req, res) => {
-    res.send({type: 'DELETE'});
+router.delete('/tuners/:id', (req, res, next) => {
+    Tuner.findByIdAndRemove({_id: req.params.id})
+    .then(tuner => res.send(tuner))
+    .catch(next);
 });
 
 module.exports = router;
